@@ -1,4 +1,4 @@
-class playerProjectile{
+class projectileHandler{
 
   constructor(x,y,size,angle,type,damage){
 
