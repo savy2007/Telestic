@@ -2,19 +2,16 @@ class playerProjectile{
 
   constructor(x,y,size,angle,type,damage){
 
-  this.type = 0; //if type = 1 it is a magic attack if type = 2 it is a range attack 0 will be null
+  this.type = type; //if type = 1 it is a magic attack if type = 2 it is a range attack 0 will be null
 	this.x = x;
 	this.y = y;
 	this.size = size;
-	this.angle = 0;
-	this.dir = "N"; // direction
-  this.damage;
+	this.angle = angle;
+  this.damage = damage;
+  //this.dir = "N"; direction
 
 }
 setup(){
-
-//  this.angle = player.angle
-  //this.type = player.playerClass
 
   switch (this.type){
 
