@@ -7,13 +7,10 @@ class playerProjectile{
 	this.y = y;
 	this.size = size;
 	this.angle = 0;
-	this.dir = "N"; // direction
+	this.dir; // direction
 
 }
 setup(){
-
-  this.angle = player.angle
-  this.type = player.playerClass
 
   switch (this.type){
 
@@ -29,7 +26,7 @@ setup(){
     //meele projectile data will go here
     break;
   }
-  
+
 }
 
  draw() {
