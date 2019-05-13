@@ -1,7 +1,7 @@
 
 
-var gameWidth = 512;
-var gameHeight = 512;
+var gameWidth = 475;
+var gameHeight = 360;
 var player;
 
 
