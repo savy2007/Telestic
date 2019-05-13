@@ -1,0 +1,3 @@
+class lavaDragonHand2 {
+
+}
