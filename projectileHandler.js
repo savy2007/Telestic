@@ -17,17 +17,21 @@ setup(){
   switch (this.type){
 
     case 1: //mage
-    magicProjectile();
+    magicProjectile.draw();
+    magicProjectile.update();
     //magic projectile data will go here
     break;
 
     case 2: //range
-    rangeProjectile();
+    rangeProjectile.draw();
+    rangeProjectile.update();
+
     //range projectile data will go here
     break;
 
     case 3: //meele
-    meeleProjectile();
+    meeleProjectile.draw();
+    meeleProjectile.update();
     //meele projectile data will go here
     break;
   }
@@ -39,19 +43,6 @@ setup(){
 }
 
  update(){
-
- }
-
- magicProjectile(){
-
- }
-
- rangeProjectile(){
-
- }
-
- meeleProjectile(){
-
 
  }
 
