@@ -1,6 +1,6 @@
 class playerProjectile{
 
-  constructor(x,y,size,type){
+  constructor(x,y,size,angle,type,damage){
 
   this.type = 0; //if type = 1 it is a magic attack if type = 2 it is a range attack 0 will be null
 	this.x = x;
@@ -8,12 +8,13 @@ class playerProjectile{
 	this.size = size;
 	this.angle = 0;
 	this.dir = "N"; // direction
+  this.damage;
 
 }
 setup(){
 
-  this.angle = player.angle
-  this.type = player.playerClass
+//  this.angle = player.angle
+  //this.type = player.playerClass
 
   switch (this.type){
 
@@ -29,7 +30,7 @@ setup(){
     //meele projectile data will go here
     break;
   }
-  
+
 }
 
  draw() {
