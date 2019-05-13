@@ -32,7 +32,7 @@ update(){
 this.track(player.x,player.y);
 
 
-if(this.handsAlive = true){
+if(this.handsAlive = true && this.phase = 1){
 
   //console.log("this boss cannot be killed until the hands are dead");
   this.health = 1000; //resets health to 1000
@@ -40,7 +40,20 @@ if(this.handsAlive = true){
 
 } else {
 
+  this.phase = 2; //we will now enter phase 2 of the boss
   console.log("this boss can now be damaged");
+
+}
+
+if (this.health < 250){ //boss is now under 250 health
+  this.phase = 3;
+  console.log("last phase");
+  //boss will now enter the last phase
+}
+
+if (this.health === 0){
+
+  console.log("boss is now dead");
 
 }
 
