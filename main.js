@@ -10,6 +10,7 @@ function setup(){
 createCanvas(gameWidth, gameWidth);
 player = new Player(gameWidth / 2, gameHeight / 2, 15);//puts it in the middle so on draw we can call 0, 0 for x and y
 lavadragon = new lavaDragon(gameWidth/2 , 50, 50);
+bg = loadImage('data/Img/2.jpg');
 
 }
 
@@ -19,7 +20,7 @@ function update(){
 
 function draw(){
 
-background(150);
+background(bg);
 player.draw();
 player.update();
 lavadragon.draw();
