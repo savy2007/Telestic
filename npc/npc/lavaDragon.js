@@ -32,7 +32,7 @@ update(){
 this.track(player.x,player.y);
 
 
-if(this.handsAlive = true && this.phase = 1){
+if(this.handsAlive = true){
 
   //console.log("this boss cannot be killed until the hands are dead");
   this.health = 1000; //resets health to 1000
