@@ -21,9 +21,11 @@ draw(){
 	push();
 	angleMode(DEGREES);
   translate(this.x, this.y);//translate to the current x and y so we can draw at 0, 0 x and y
-	rotate(this.angle);
+	rotate(this.angle + 90); //need this to offset by 90degs
 	fill(255);
 	rect(0 - this.size / 2, 0  - this.size / 2, this.size, this.size);
+	fill(0);
+	rect(0 - this.size / 2, 0  - this.size / 2, this.size, this.size / 4);//added to make a visual refrance to the front of the object
 	pop();
 
 }
@@ -75,7 +77,6 @@ track(x, y){
 		stroke(0);//black line color
 	}
 
-}
 
 function shoot(){
 	if (mouseIsPressed) {
