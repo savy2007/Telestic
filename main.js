@@ -3,7 +3,7 @@
 var gameWidth = 480;
 var gameHeight = 360;
 var player;
-var bg;
+//var bg;
 
 
 function setup(){
@@ -15,7 +15,7 @@ lavadragon = new lavaDragon(gameWidth/2 , 50, 50);
 
 }
 function preload() {
-  bg = loadImage('data/Img/2.jpg');
+  //bg = loadImage('data/Img/2.jpg');
 }
 
 function update(){
@@ -24,7 +24,7 @@ function update(){
 
 function draw(){
 
-background(bg);
+background(255);
 player.draw();
 player.update();
 lavadragon.draw();
