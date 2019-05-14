@@ -33,7 +33,7 @@ draw(){
 update(){
 
 this.move();
-this.shoot();
+//this.shoot();
 this.track(mouseX, mouseY);
 
 }
@@ -77,11 +77,11 @@ track(x, y){
 		stroke(0);//black line color
 	}
 
-shoot(){
-	if (mouseIsPressed) {
-    //console.log("mouse is pressed");
-		//this is where i will call the shooting script
-  }
-}
 
+function shoot(){
+	if (mouseIsPressed) {
+		console.log("mouse is pressed");
+		rangeProjectile = new rangeProjectile(this.x , this.y, 50, this.angle);
+		//this is where i will call the shooting script
+	}
 }

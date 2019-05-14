@@ -1,5 +1,4 @@
 
-
 var gameWidth = 512;
 var gameHeight = 512;
 
@@ -11,6 +10,7 @@ var numOfCols = 20;
 
 
 
+
 function setup(){
 
 createCanvas(gameWidth, gameWidth);
@@ -18,6 +18,10 @@ player = new Player(gameWidth / 2, gameHeight / 2, 15);//puts it in the middle s
 lavadragon = new lavaDragon(gameWidth/2 , 50, 50);
 grid = new Grid(numOfRows, numOfCols, gameWidth / numOfRows, gameHeight / numOfCols);
 
+
+}
+function preload() {
+  //bg = loadImage('data/Img/2.jpg');
 }
 
 function update(){
@@ -28,7 +32,7 @@ function update(){
 
 function draw(){
 
-background(150);
+background(255);
 player.draw();
 lavadragon.draw();
 grid.draw();

@@ -40,7 +40,20 @@ if(this.handsAlive = true){
 
 } else {
 
+  this.phase = 2; //we will now enter phase 2 of the boss
   console.log("this boss can now be damaged");
+
+}
+
+if (this.health < 250){ //boss is now under 250 health
+  this.phase = 3;
+  console.log("last phase");
+  //boss will now enter the last phase
+}
+
+if (this.health === 0){
+
+  console.log("boss is now dead");
 
 }
 
