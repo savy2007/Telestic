@@ -1,9 +1,14 @@
 
 
-var gameWidth = 480;
-var gameHeight = 360;
+var gameWidth = 512;
+var gameHeight = 512;
+
 var player;
-//var bg;
+var grid;
+
+var numOfRows = 20;
+var numOfCols = 20;
+
 
 
 function setup(){
@@ -11,6 +16,7 @@ function setup(){
 createCanvas(gameWidth, gameWidth);
 player = new Player(gameWidth / 2, gameHeight / 2, 15);//puts it in the middle so on draw we can call 0, 0 for x and y
 lavadragon = new lavaDragon(gameWidth/2 , 50, 50);
+grid = new Grid(numOfRows, numOfCols, gameWidth / numOfRows, gameHeight / numOfCols);
 
 
 }
@@ -19,16 +25,24 @@ function preload() {
 }
 
 function update(){
-
+  grid.update();
+  player.update();
+  lavadragon.update();
 }
 
 function draw(){
 
 background(255);
 player.draw();
-player.update();
 lavadragon.draw();
-lavadragon.update();
+grid.draw();
+
+update();
+
+}
+
+function mouseClicked() {
+  grid.clicked();
 }
 
 function angle(cx, cy, ex, ey) {
