@@ -79,8 +79,15 @@ track(x, y){
 
 shoot(){
 	if (mouseIsPressed) {
+		projectileManager.addProjectile(new RedShoot(this.x, this.y, this.angle, null));
+		projectileManager.addProjectile(new BlueShoot(this.x + 50, this.y, this.angle, null));
+		projectileManager.addProjectile(new Projectile(this.x + 100, this.y, this.angle, null));
+
+		//null will be the type of ammo
     //console.log("mouse is pressed");
 		//this is where i will call the shooting script
+
+
   }
 }
 

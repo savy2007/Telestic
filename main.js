@@ -5,6 +5,7 @@ var gameHeight = 512;
 
 var player;
 var grid;
+var projectileManager;
 
 var numOfRows = 20;
 var numOfCols = 20;
@@ -17,13 +18,14 @@ createCanvas(gameWidth, gameWidth);
 player = new Player(gameWidth / 2, gameHeight / 2, 15);//puts it in the middle so on draw we can call 0, 0 for x and y
 lavadragon = new lavaDragon(gameWidth/2 , 50, 50);
 grid = new Grid(numOfRows, numOfCols, gameWidth / numOfRows, gameHeight / numOfCols);
-
+projectileManager = new ProjectileManager();
 }
 
 function update(){
   grid.update();
   player.update();
   lavadragon.update();
+  projectileManager.update();
 }
 
 function draw(){
@@ -31,6 +33,7 @@ function draw(){
 background(150);
 player.draw();
 lavadragon.draw();
+projectileManager.draw();
 grid.draw();
 
 update();
