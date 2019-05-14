@@ -3,6 +3,7 @@
 var gameWidth = 480;
 var gameHeight = 360;
 var player;
+var bg;
 
 
 function setup(){
@@ -10,8 +11,11 @@ function setup(){
 createCanvas(gameWidth, gameWidth);
 player = new Player(gameWidth / 2, gameHeight / 2, 15);//puts it in the middle so on draw we can call 0, 0 for x and y
 lavadragon = new lavaDragon(gameWidth/2 , 50, 50);
-bg = loadImage('data/Img/2.jpg');
 
+
+}
+function preload() {
+  bg = loadImage('data/Img/2.jpg');
 }
 
 function update(){
