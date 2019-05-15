@@ -10,7 +10,7 @@ class Player{
 	this.state = [""];//any affects like fire will go here
 	//we will constantly loop through the array to check if player is onfire or poisned
 	//once fire or poisned is done, we will remove it from the array
-	this.playerClass = 1;
+	this.playerClass = 3;
 	//0 = undecided 1 = mage 2 = ranger 3 = melee
 	this.playerName = "savy";
 
@@ -40,8 +40,28 @@ this.name();
 }
 
 name(){
-
+	fill(255, 255, 255);
 	text(this.playerName, this.x	- 10, this.y - 20);
+
+	if (this.playerClass === 1){
+
+			fill(0, 0, 255);
+			text('Wizard', this.x	- 17, this.y - 35);
+
+
+	}
+	if (this.playerClass === 2) {
+		fill(0, 255, 0);
+		text('Archer', this.x	- 15, this.y - 35);
+
+	}
+	if (this.playerClass === 3) {
+		fill(255, 0, 0);
+		text('Warrior', this.x	- 17, this.y - 35);
+
+	}
+
+
 }
 
 move(){
