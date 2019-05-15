@@ -35,7 +35,13 @@ update(){
 this.move();
 this.shoot();
 this.track(mouseX, mouseY);
+this.name();
 
+}
+
+name(){
+
+	text(this.playerName, this.x	- 10, this.y - 20);
 }
 
 move(){
