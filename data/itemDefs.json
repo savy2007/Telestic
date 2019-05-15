@@ -1,0 +1,20 @@
+{
+  "itemDefs":{
+
+    "allItems":[
+      {
+
+      "item": "Health Potion",
+      "itemId": "1",
+      "itemImg": "1.png",
+      "itemRarity": "1"
+    },
+    {
+      "item": "Speed Potion",
+      "itemId": "2",
+      "itemImg": "2.png",
+      "itemRarity": "1",
+    }
+    ]
+
+}

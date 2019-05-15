@@ -13,6 +13,7 @@ class Player{
 	this.playerClass = 1;
 	//0 = undecided 1 = mage 2 = ranger 3 = melee
 	this.playerName = "savy";
+	this.playerInventory = [1,2,3];
 
 }
 
@@ -27,14 +28,13 @@ draw(){
 	fill(0);
 	rect(0 - this.size / 2, 0  - this.size / 2, this.size, this.size / 4);//added to make a visual refrance to the front of the object
 	pop();
-
 }
 
 update(){
-
 this.move();
 this.shoot();
 this.track(mouseX, mouseY);
+this.inventory();
 
 }
 
@@ -89,6 +89,17 @@ shoot(){
 
 
   }
+}
+inventory(){
+
+	for (var i = 0; i < this.playerInventory.length; i++) {
+		console.log(this.playerInventory);
+
+	}
+}
+sendmessage(string){
+	//we can use this in the future to send a message to the player
+
 }
 
 }
