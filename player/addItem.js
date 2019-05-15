@@ -13,6 +13,7 @@ function addItem(item){
   player.playerInventory.push(item)
 
   return true;
+  //test
 
 
 }
