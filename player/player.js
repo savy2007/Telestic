@@ -14,6 +14,7 @@ class Player{
 	//0 = undecided 1 = mage 2 = ranger 3 = melee
 	this.playerName = "savy";
 	this.playerInventory = [1,2,3];
+	this.coinPouch = 0;
 
 }
 
@@ -28,6 +29,7 @@ draw(){
 	fill(0);
 	rect(0 - this.size / 2, 0  - this.size / 2, this.size, this.size / 4);//added to make a visual refrance to the front of the object
 	pop();
+
 }
 
 update(){
@@ -36,13 +38,16 @@ this.shoot();
 this.track(mouseX, mouseY);
 this.inventory();
 
+
 }
 
 move(){
 	if(keyIsDown(UP_ARROW)){
+
 		this.y--;
 		this.dir = "N";
 		console.log("the char is now facing " + this.dir); //moving up
+
 	}
 	if(keyIsDown(DOWN_ARROW)){
 		this.y++;
@@ -79,6 +84,7 @@ track(x, y){
 
 shoot(){
 	if (mouseIsPressed) {
+
 		projectileManager.addProjectile(new RedShoot(this.x, this.y, this.angle, null));
 		projectileManager.addProjectile(new BlueShoot(this.x + 50, this.y, this.angle, null));
 		projectileManager.addProjectile(new Projectile(this.x + 100, this.y, this.angle, null));
@@ -95,10 +101,15 @@ inventory(){
 	for (var i = 0; i < this.playerInventory.length; i++) {
 		console.log(this.playerInventory);
 
+
 	}
+		this.sendMessage("hello");
 }
-sendmessage(string){
-	//we can use this in the future to send a message to the player
+sendMessage(string){
+
+	textSize(30);
+	text(string, 25, 500);
+
 
 }
 
