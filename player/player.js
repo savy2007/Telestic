@@ -8,8 +8,6 @@ class Player{
 	this.health = 100;
 	this.dir = "N"; // direction
 	this.state = [""];//any affects like fire will go here
-	//we will constantly loop through the array to check if player is onfire or poisned
-	//once fire or poisned is done, we will remove it from the array
 	this.playerClass = 1;
 	//0 = undecided 1 = mage 2 = ranger 3 = melee
 	this.playerName = "savy";
@@ -33,7 +31,7 @@ draw(){
 update(){
 
 this.move();
-//this.shoot();
+this.shoot();
 this.track(mouseX, mouseY);
 
 }
@@ -64,30 +62,19 @@ move(){
 track(x, y){
 		var tx = x;//tracking x
 		var ty = y;//tracking y
-
-		/* this function I didnt write and dont fully understand but
-			after playing with it i got it to work
-		*/
 		this.angle = angle360(this.x, this.y, tx, ty);
 
 		strokeWeight(3);//line width
 		stroke(255, 0, 0);//red line color
-		//line(this.x - 15 + this.size, this.y, tx, ty);//draws a red line to show tracking
 		strokeWeight(1);//returns line size back to 1
 		stroke(0);//black line color
 	}
 
 shoot(){
 	if (mouseIsPressed) {
-    //console.log("mouse is pressed");
+    console.log("mouse is pressed");
 		//this is where i will call the shooting script
   }
 }
 
-function shoot(){
-	if (mouseIsPressed) {
-		console.log("mouse is pressed");
-		rangeProjectile = new rangeProjectile(this.x , this.y, 50, this.angle);
-		//this is where i will call the shooting script
-	}
 }
