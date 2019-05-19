@@ -1,27 +1,41 @@
 
 
-var gameWidth = 512;
-var gameHeight = 512;
+var gameWidth;
+var gameHeight;
+var scl = 12;
+var aspectRatio = 0.75;// 4:3
 
 var player;
 var grid;
 
-var numOfRows = 20;
-var numOfCols = 20;
 
+function preload() {
+//load images
+}
 
 
 function setup(){
 
+gameWidth = windowWidth;
+gameHeight = windowWidth * aspectRatio;
 createCanvas(gameWidth, gameWidth);
+var s = gameWidth / scl;
+grid = new Grid(scl, scl * aspectRatio, s, s);
 player = new Player(gameWidth / 2, gameHeight / 2, 15);//puts it in the middle so on draw we can call 0, 0 for x and y
 lavadragon = new lavaDragon(gameWidth/2 , 50, 50);
-grid = new Grid(numOfRows, numOfCols, gameWidth / numOfRows, gameHeight / numOfCols);
 
 
 }
-function preload() {
-  //bg = loadImage('data/Img/2.jpg');
+
+function windowResized() {
+	gameWidth = windowWidth;
+	gameHeight = windowWidth * aspectRatio;
+
+  resizeCanvas(gameWidth, gameHeight);
+
+  //player.resize(gameWidth / scl);
+  grid.resize(gameWidth / scl, gameWidth / scl);
+
 }
 
 function update(){
@@ -33,9 +47,10 @@ function update(){
 function draw(){
 
 background(255);
+grid.draw();
 player.draw();
 lavadragon.draw();
-grid.draw();
+
 
 update();
 

@@ -25,6 +25,14 @@ class Box{
     pop();
   }
 
+  resize(x, y, width, height){
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+
+  }
+
   getInfo(){
     return{
       x: this.x,
@@ -61,4 +69,6 @@ class Box{
       return this.getInfo();
     }
   }
+
+
 }

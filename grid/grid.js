@@ -8,7 +8,6 @@ class Grid{
     this.height = height;
 
     for (var r = 0; r < this.rows; r++) {
-
       for (var c = 0; c < this.cols; c++) {
         this.boxes.push(new Box(r * this.width, c * this.height, this.width, this.height, r, c, null));
       }
@@ -32,8 +31,15 @@ class Grid{
       this.boxes[i].draw();
     }
   }
+
+
+  resize(width, height){
+    var index = 0;
+    for (var r = 0; r < this.rows; r++) {
+      for (var c = 0; c < this.cols; c++) {
+        this.boxes[index].resize(r * width, c * height, width, height);
+        index++;
+      }
+    }
+  }
 }
-
-
-
-//constructor(x, y, width, height, type){
