@@ -78,3 +78,36 @@ shoot(){
 }
 
 }
+
+
+ // global var//
+ var res = -0.5;
+ var bonus = 1.5;
+
+function applyDamage(type, damage){
+
+	var d = damage;
+
+	if(type === 1 && player.playerClass = 3){ //if atack is magic and player is melee
+		d = d * bonus;
+	}
+	if(type === 2 && player.playerClass = 1){//if attack is range and player is magic
+		d = d * bonus;
+	}
+	if(type === 3 && player.playerClass = 2){//if attack is meele and player is range
+		d = d * bonus;
+	}
+
+	//restitances
+	if(type === player.playerClass){ // if attack type and player class are the same we will apply restitances
+
+		d = d * res;
+
+	}
+
+
+
+	player.health = player.health - d;
+}
+
+}
