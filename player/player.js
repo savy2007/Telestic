@@ -11,19 +11,7 @@ class Player extends MasterObject{
 
 	}
 
-	draw(){
-
-		push();
-		angleMode(DEGREES);
-	  translate(this.x, this.y);//translate to the current x and y so we can draw at 0, 0 x and y
-		rotate(this.angle + 90); //need this to offset by 90degs
-		fill(255);
-		rect(0 - this.width / 2, 0  - this.width / 2, this.width, this.width);
-		fill(0);
-		rect(0 - this.height / 2, 0  - this.height / 2, this.height, this.height / 4);//added to make a visual refrance to the front of the object
-		pop();
-
-	}
+	
 
 	update(){
 		this.move();

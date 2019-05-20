@@ -6,5 +6,4 @@ class Mage extends Player{
 		this.resistance = [0.5, 2, 1];//array that holds resistances to attacks [magic, melee, range] in that order (alphabetical)
 
 	}
-
 }

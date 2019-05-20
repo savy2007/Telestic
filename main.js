@@ -5,12 +5,22 @@ var gameHeight;
 var scl = 12;
 var aspectRatio = 0.75;// 4:3
 
+// this comes from the size of each tile for
+// testing im using the numbers that works with
+// the sprite sheet test, these numbers will change
+// once a real sprite sheet is provided
+var tileWidth = 23;
+var tileHeight = 31;
+
 var mage;
 var grid;
+
+var spriteSheet;
 
 
 function preload() {
 //load images
+	spriteSheet = loadImage('data//img/testSpriteSheet.png');
 }
 
 
