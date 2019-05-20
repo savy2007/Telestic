@@ -5,7 +5,7 @@ var gameHeight;
 var scl = 12;
 var aspectRatio = 0.75;// 4:3
 
-var player;
+var mage;
 var grid;
 
 
@@ -21,8 +21,8 @@ gameHeight = windowWidth * aspectRatio;
 createCanvas(gameWidth, gameWidth);
 var s = gameWidth / scl;
 grid = new Grid(scl, scl * aspectRatio, s, s);
-player = new Player(gameWidth / 2, gameHeight / 2, 15);//puts it in the middle so on draw we can call 0, 0 for x and y
-lavadragon = new lavaDragon(gameWidth/2 , 50, 50);
+mage = new Mage(gameWidth / 2 - gameWidth / scl / 2, gameWidth / 2 - gameHeight / scl / 2, gameWidth / scl, gameWidth / scl, "Player 1");//puts it in the middle so on draw we can call 0, 0 for x and y
+lavadragon = new LavaDragon(gameWidth / 2 - gameWidth / scl / 2, 0, gameWidth / scl, gameWidth / scl);
 
 
 }
@@ -33,14 +33,14 @@ function windowResized() {
 
   resizeCanvas(gameWidth, gameHeight);
 
-  //player.resize(gameWidth / scl);
+  mage.resize(gameWidth / scl);
   grid.resize(gameWidth / scl, gameWidth / scl);
 
 }
 
 function update(){
   grid.update();
-  player.update();
+  mage.update();
   lavadragon.update();
 }
 
@@ -48,7 +48,7 @@ function draw(){
 
 background(255);
 grid.draw();
-player.draw();
+mage.draw();
 lavadragon.draw();
 
 
