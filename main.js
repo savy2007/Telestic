@@ -31,7 +31,7 @@ gameHeight = windowWidth * aspectRatio;
 createCanvas(gameWidth, gameWidth);
 var s = gameWidth / scl;
 grid = new Grid(scl, scl * aspectRatio, s, s);
-mage = new Mage(gameWidth / 2 - gameWidth / scl / 2, gameWidth / 2 - gameHeight / scl / 2, gameWidth / scl, gameWidth / scl, "Player 1");//puts it in the middle so on draw we can call 0, 0 for x and y
+mage = new Mage(gameWidth / 2 - gameWidth / scl / 2, gameWidth / 2 - gameHeight / scl / 2, gameWidth / scl, gameWidth / scl, "Player 1", playerTiles);//puts it in the middle so on draw we can call 0, 0 for x and y
 lavadragon = new LavaDragon(gameWidth / 2 - gameWidth / scl / 2, 0, gameWidth / scl, gameWidth / scl);
 
 

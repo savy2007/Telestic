@@ -1,7 +1,7 @@
 class Player extends MasterObject{
 
-	constructor(x, y, width, height, name){
-		super(x, y, width, height);
+	constructor(x, y, width, height, name, tiles){
+		super(x, y, width, height, tiles);
 		this.health = 100;//default, can be overridden in the character class
 		this.angle = 0;
 		this.dir = "N"; // direction
@@ -11,11 +11,12 @@ class Player extends MasterObject{
 
 	}
 
-	
+
 
 	update(){
 		this.move();
 		this.attack();
+		this.chooseTiles();
 		this.track(mouseX, mouseY);
 	}
 
@@ -27,20 +28,23 @@ class Player extends MasterObject{
 			this.dir = "N";
 			//console.log("the char is now facing " + this.dir); //moving up
 		}
-		if(keyIsDown(DOWN_ARROW)){
+		else if(keyIsDown(DOWN_ARROW)){
 			this.y++;
 			this.dir = "S";
 			//console.log("the char is now facing " + this.dir); //moving down
 		}
-		if(keyIsDown(RIGHT_ARROW)){
+		else if(keyIsDown(RIGHT_ARROW)){
 			this.x++;
 			this.dir = "E";
 			//console.log("the char is now facing " + this.dir); //moving right
 		}
-		if(keyIsDown(LEFT_ARROW)){
+		else if(keyIsDown(LEFT_ARROW)){
 			this.x--;
 			this.dir = "W";
 			//console.log("the char is now facing " + this.dir);//moving left
+		}
+		else{
+			this.dir = "Rest";
 		}
 	}
 
@@ -60,6 +64,41 @@ class Player extends MasterObject{
 	    //console.log("mouse is pressed");
 			//this is where i will call the shooting script
 	  }
+	}
+
+	chooseTiles(){
+
+		switch(this.dir){
+			case "rest":
+				this.currentTileSet = this.tileArray[0];
+				break;
+			case "N":
+				this.currentTileSet = this.tileArray[1];
+				break;
+			case "NE":
+				this.currentTileSet = this.tileArray[2];
+				break;
+			case "E":
+				this.currentTileSet = this.tileArray[3];
+				break;
+			case "SE":
+				this.currentTileSet = this.tileArray[4];
+				break;
+			case "S":
+				this.currentTileSet = this.tileArray[5];
+				break;
+			case "SW":
+				this.currentTileSet = this.tileArray[6];
+				break;
+			case "W":
+				this.currentTileSet = this.tileArray[7];
+				break;
+			case "NW":
+				this.currentTileSet = this.tileArray[8];
+				break;
+
+			}
+
 	}
 
 	damage(type, damage){
