@@ -12,6 +12,7 @@ var aspectRatio = 0.75;// 4:3
 var tileWidth = 23;
 var tileHeight = 31;
 
+var CAMERA;
 var mage;
 var grid;
 
@@ -25,10 +26,10 @@ function preload() {
 
 
 function setup(){
-
 gameWidth = windowWidth;
 gameHeight = windowWidth * aspectRatio;
 createCanvas(gameWidth, gameWidth);
+CAMERA = new Camera();
 var s = gameWidth / scl;
 grid = new Grid(scl, scl * aspectRatio, s, s);
 mage = new Mage(gameWidth / 2 - gameWidth / scl / 2, gameWidth / 2 - gameHeight / scl / 2, gameWidth / scl, gameWidth / scl, "Player 1", playerTiles);//puts it in the middle so on draw we can call 0, 0 for x and y
@@ -38,14 +39,17 @@ lavadragon = new LavaDragon(gameWidth / 2 - gameWidth / scl / 2, 0, gameWidth / 
 }
 
 function windowResized() {
+	resize();
+}
+
+function resize(){
 	gameWidth = windowWidth;
 	gameHeight = windowWidth * aspectRatio;
+	resizeCanvas(gameWidth, gameHeight);
 
-  resizeCanvas(gameWidth, gameHeight);
-
-  mage.resize(gameWidth / scl);
   grid.resize(gameWidth / scl, gameWidth / scl);
-
+	mage.resize(gameWidth / scl, gameWidth / scl);
+	lavadragon.resize(gameWidth / scl, gameWidth / scl);
 }
 
 function update(){
@@ -57,9 +61,9 @@ function update(){
 function draw(){
 
 background(255);
-grid.draw();
-mage.draw();
-lavadragon.draw();
+
+CAMERA.draw();
+
 
 
 update();

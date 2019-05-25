@@ -30,6 +30,12 @@ class Grid{
     for (var i = 0; i < this.boxes.length; i++) {
       this.boxes[i].draw();
     }
+    push();
+    noFill();
+    stroke(0);
+    strokeWeight(3)
+    rect(0, 0, gameWidth - 3, gameHeight);
+    pop();
   }
 
 
