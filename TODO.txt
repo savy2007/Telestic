@@ -1,0 +1,9 @@
+TODO
+
+4:3 needs to get fixed
+scaling for camera
+shooting isnt complete
+Equipment system
+Inventory system
+Event system
+Shops
